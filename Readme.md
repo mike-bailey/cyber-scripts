@@ -1,1 +1,1 @@
-Kali Linux scripts.
+A collection of cyber security scripts.
