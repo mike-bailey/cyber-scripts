@@ -5,4 +5,5 @@ then
 else
 	echo You have 1GB RAM or more. Good stuff.
 fi
+ufw disable
 apt-get install nmap -y &> /dev/null
